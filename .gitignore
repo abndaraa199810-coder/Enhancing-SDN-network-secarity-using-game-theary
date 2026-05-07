@@ -1,0 +1,22 @@
+# Runtime logs
+logs/
+*.log
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Backup / old controller files
+*_old.py
+*_backup.py
+*_prev.py
+*_before_*.py
+*backup*.py
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+*.swp
