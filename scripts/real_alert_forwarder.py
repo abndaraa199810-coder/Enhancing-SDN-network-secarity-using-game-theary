@@ -72,7 +72,7 @@ def read_new_lines(log_path, positions):
     try:
         current_size = log_path.stat().st_size
 
-        # إذا الملف انعمل له truncate بسبب tee بدون -a
+      
         if current_size < positions[log_path]:
             positions[log_path] = 0
 
