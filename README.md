@@ -114,8 +114,13 @@ snort/
 scripts/
 
 attacks/
+attack_hping3.sh
+attack_scapy.py
+run_ddos_attack.sh
+run_multistage_attack.sh
 
 docs/
+
 
 ---
 
@@ -132,11 +137,5 @@ docs/
 - Real-time logging
 
 ---
-
-# Author
-
-Abd Alnaser Al-Daraa
-
-Master Thesis
 
 Enhancing SDN Network Security Using Game Theory
