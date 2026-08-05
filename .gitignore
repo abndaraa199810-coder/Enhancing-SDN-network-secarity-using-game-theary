@@ -20,3 +20,22 @@ __pycache__/
 .vscode/
 .idea/
 *.swp
+# AI generated files
+data/
+models/
+results/
+*.pkl
+*.joblib
+
+# Temporary integration files
+ml_detection_latest.json
+*.json.tmp
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Temporary files
+*.tmp
+*.bak
