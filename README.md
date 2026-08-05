@@ -1,42 +1,142 @@
 # Enhancing SDN Network Security Using Game Theory
 
-This project implements a game-theoretic defense mechanism for Software-Defined Networking (SDN) environments. The system integrates Mininet, Open vSwitch, Ryu Controller, and Snort IDS to detect and mitigate ICMP Flooding and IP Spoofing attacks.
 
-## Main Components
+# Enhancing SDN Network Security Using Game Theory
 
-- Mininet topology with two OpenFlow switches and six hosts
-- Ryu SDN controller using OpenFlow 1.3
-- Dynamic game-theoretic decision engine
-- Snort IDS for mirrored traffic inspection
-- Alert forwarding agent from Snort VM to the controller VM
-- Mitigation actions: ALLOW, RL_1, RL_2, RL_3, and BLOCK
+## Overview
 
-## Defense Strategies
+This project presents an intelligent Software Defined Networking (SDN) security framework that combines:
 
-| Strategy | Action |
-|---|---|
-| ALLOW | Allow normal traffic |
-| RL_1 | Rate limit to 4000 kbps |
-| RL_2 | Rate limit to 1024 kbps |
-| RL_3 | Rate limit to 512 kbps |
-| BLOCK | Install OpenFlow drop rule |
+- Ryu SDN Controller
+- OpenFlow 1.3
+- Snort IDS
+- Machine Learning Detection
+- Multi-Stage Attack Pattern Segmentation
+- Dynamic Game Theory Engine
 
-## Tested Attacks
+The system detects and mitigates ICMP Flooding and IP Spoofing attacks while adapting its defense strategy according to the observed attack stage.
 
-1. ICMP Flood Attack
-2. IP Spoofing Attack
-3. Spoofed ICMP Flood Attack
+---
 
-## Project Workflow
+# System Architecture
 
-1. Build the SDN topology using Mininet.
-2. Mirror traffic from OpenFlow switches to the Snort VM.
-3. Detect suspicious traffic using Snort IDS.
-4. Forward Snort alerts to the Ryu controller.
-5. Evaluate the flow using the game-theoretic decision engine.
-6. Apply mitigation using OpenFlow rules.
+Network Traffic
+→ Dataset Processing
+→ Feature Extraction
+→ Attack Pattern Segmentation
+→ Machine Learning Detection
+→ Dynamic Game Theory Engine
+→ Defense Decision
+→ OpenFlow Mitigation
 
-## Running the Controller
+---
 
-```bash
-ryu-manager controllers/ryu_ddos_controller.py
+# Main Components
+
+## Controller
+
+- Ryu Controller (OpenFlow 1.3)
+- Traffic Monitoring
+- Flow Statistics Collection
+- Multi-Stage Attack Detection
+- Dynamic Defense Deployment
+
+## Intrusion Detection
+
+- Snort IDS
+- Real-time ICMP Detection
+- Alert Forwarding
+
+## Machine Learning
+
+- Attack Classification
+- Multi-stage Detection
+- Confidence Evaluation
+
+## Game Theory Engine
+
+- Utility Function
+- Expected Utility
+- Belief Update
+- Reputation Score
+- Adaptive Defense Strategy
+
+---
+
+# Defense Actions
+
+| Strategy | Description |
+|----------|-------------|
+| ALLOW | Normal Traffic |
+| RL_1 | Rate Limit 4000 kbps |
+| RL_2 | Rate Limit 1024 kbps |
+| RL_3 | Rate Limit 512 kbps |
+| BLOCK | Block Attack Traffic |
+
+---
+
+# Supported Attack Stages
+
+- NORMAL
+- PROBE
+- FLOOD_LOW
+- FLOOD_HIGH
+- IP_SPOOFING
+- SPOOFED_FLOOD
+
+---
+
+# Technologies
+
+- Python
+- Ryu SDN Framework
+- OpenFlow 1.3
+- Mininet
+- Open vSwitch
+- Snort IDS
+- Machine Learning
+- Markov-Based Stage Transition
+- Dynamic Game Theory
+
+---
+
+# Repository Structure
+controllers/
+    ryu_ddos_controller_multistage.py
+    game_engine_multistage.py
+
+topology/
+    topology.py
+
+snort/
+    snort.conf
+
+scripts/
+
+attacks/
+
+docs/
+
+---
+
+# Features
+
+- Multi-stage attack detection
+- Dynamic game-theoretic defense
+- Machine learning integration
+- Snort IDS integration
+- ICMP Flood detection
+- IP Spoofing detection
+- Adaptive rate limiting
+- Automatic traffic blocking
+- Real-time logging
+
+---
+
+# Author
+
+Abd Alnaser Al-Daraa
+
+Master Thesis
+
+Enhancing SDN Network Security Using Game Theory
