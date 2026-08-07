@@ -1,7 +1,7 @@
 # Enhancing SDN Network Security Using Game Theory
 
 
-# Enhancing SDN Network Security Using Game Theory
+
 
 ## Overview
 
@@ -121,6 +121,8 @@ run_multistage_attack.sh
 
 docs/
 
+ ai_training/ model training.py
+
 
 ---
 
@@ -137,5 +139,3 @@ docs/
 - Real-time logging
 
 ---
-
-Enhancing SDN Network Security Using Game Theory
